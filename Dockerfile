@@ -27,12 +27,6 @@ RUN echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/p
 
 RUN sudo apt-get update && sudo apt-get install -y gz-garden 
 
-RUN sudo apt update && sudo apt install -y \
-    python3-sdformat13 \
-    ros-humble-ros-gzgarden \
-    ros-humble-xacro \
-    python3-colcon-common-extensions
-
 # Install tools and dependencies
 RUN apt-get update && apt-get install -y \
     ros-humble-plotjuggler-ros \
