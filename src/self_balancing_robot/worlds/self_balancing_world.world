@@ -1,15 +1,6 @@
 <?xml version="1.0"?>
 <sdf version="1.6">
   <world name="self_balancing_robot_world">
-    <!-- Basic Ground Plane -->
-    <include>
-      <uri>model://ground_plane</uri>
-    </include>
-
-    <!-- A Simple Light Source -->
-    <include>
-      <uri>model://sun</uri>
-    </include>
 
     <!-- A Simple Box for Obstacle -->
     <model name="box_obstacle">
