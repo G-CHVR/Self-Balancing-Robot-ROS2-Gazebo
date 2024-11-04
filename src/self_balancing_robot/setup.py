@@ -29,6 +29,7 @@ setup(
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
+            'pid_controller=self_balancing_robot.pid_controller:main'
         ],
     },
 )
