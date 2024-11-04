@@ -1,7 +1,7 @@
 # Makefile for Self-Balancing Robot Project
 
 # Variables
-ROS_DISTRO ?= humble
+ROS_DISTRO ?= jazzy
 SRC_DIRS := src/
 PYTHON_SOURCES := $(shell find $(SRC_DIRS) -name '*.py')
 CPP_SOURCES := $(shell find $(SRC_DIRS) -name '*.cpp' -o -name '*.hpp')

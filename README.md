@@ -38,7 +38,7 @@ Welcome to the Self-Balancing Robot Simulation project! This project aims to sim
 ### Prerequisites
 
 - **Operating System**: Ubuntu 22.04 or compatible.
-- **ROS2**: Humble Hawksbill or later.
-- **Gazebo**: Compatible version with ROS2 Humble
+- **ROS2**: Jazzy
+- **Gazebo**: Compatible version with ROS2 Jazzy
 - **Docker**: For containerization (optional but recommended).
 - **Git**: Version control system.
