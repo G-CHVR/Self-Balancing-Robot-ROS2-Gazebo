@@ -27,7 +27,7 @@ RUN sudo apt-get install -y ros-${ROS_DISTRO}-ros-gz
 # Install tools and dependencies
 RUN apt-get update && apt-get install -y \
     ros-${ROS_DISTRO}-plotjuggler-ros \
-    ros-${ROS_DISTRO}-rqt \
+    ros-${ROS_DISTRO}-rqt* \
     ros-${ROS_DISTRO}-rviz2 \
     && rm -rf /var/lib/apt/lists/*
 
@@ -36,11 +36,7 @@ RUN apt-get update && apt-get install -y \
 # ********************************************************
 
 RUN apt-get update && apt-get install -y \
-    ros-${ROS_DISTRO}-joint-state-publisher \
-    ros-${ROS_DISTRO}-gz-ros2-control \
-    ros-${ROS_DISTRO}-ros2-control \
-    python3-colcon-common-extensions \
-    ros-${ROS_DISTRO}-xacro
+    python3-colcon-common-extensions
 
 # Source the ROS 2 setup files after the workspace build
 RUN echo "source /opt/ros/${ROS_DISTRO}/setup.bash" >> /home/$USERNAME/.bashrc && \
