@@ -31,11 +31,11 @@ lint-cpp:
 	@echo "Checking C++ files with clang-format..."
 	@find $(SRC_DIRS) -name '*.cpp' -o -name '*.hpp' | xargs clang-format -style=file -output-replacements-xml | grep -c "<replacement " && echo "Code style issues found." && exit 1 || echo "No code style issues found."
 
-# Build
-.PHONY: build
-build:
+# Compile
+.PHONY: compile
+compile:
 	@echo "Building ROS 2 packages..."
-	colcon build --symlink-install
+	colcon build --merge-install
 
 # Test
 .PHONY: test
