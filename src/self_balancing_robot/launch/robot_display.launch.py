@@ -18,7 +18,7 @@ def generate_launch_description():
     gazebo_launch_path = os.path.join(get_package_share_directory('ros_gz_sim'), 'launch', 'gz_sim.launch.py')
 
     # Process xacro file to generate URDF
-    xacro_file = os.path.join(robot_description_path, 'urdf', 'self_balancing_robot.urdf.xacro')
+    xacro_file = os.path.join(robot_description_path, 'model', 'self_balancing_robot.urdf.xacro')
     doc = xacro.process_file(xacro_file, mappings={'use_sim': 'true'})
     robot_desc = doc.toprettyxml(indent='  ')
     params = {'robot_description': robot_desc}
@@ -57,10 +57,16 @@ def generate_launch_description():
     
 
     # Bridge node for connecting Gazebo and ROS 2
+    bridge_params = os.path.join(get_package_share_directory('self_balancing_robot'),'model','bridge_parameters.yml')
     bridge = Node(
         package='ros_gz_bridge',
         executable='parameter_bridge',
-        output='screen'
+        output='screen',
+        arguments=[
+            '--ros-args',
+            '-p',
+            f'config_file:={bridge_params}'
+        ]
     )
 
     # Launch description
@@ -73,5 +79,6 @@ def generate_launch_description():
         gazebo,
         node_robot_state_publisher,
         gz_spawn_entity,
-        bridge
-    ])
+        bridge,
+        ]
+    )
