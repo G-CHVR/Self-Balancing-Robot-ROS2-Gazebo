@@ -19,7 +19,8 @@ jobs:
 
       - name: Run Build in Docker Container
         run: |
-          docker run --rm ros2-jazzy-harmonic-image /bin/bash -c "
+          docker run --rm -v ${{ github.workspace }}:/ros_ws ros2-jazzy-harmonic-image /bin/bash -c "
+          cd /ros_ws
           source /opt/ros/jazzy/setup.bash &&
           rosdep update &&
           rosdep install --from-paths src --ignore-src -r -y &&
