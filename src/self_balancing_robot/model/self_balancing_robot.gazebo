@@ -12,7 +12,7 @@
 
     <plugin filename="gz-sim-joint-controller-system" name="gz::sim::systems::JointController">
       <joint_name>left_wheel_joint</joint_name>
-      <initial_velocity>-1.0</initial_velocity>
+      <initial_velocity>1.0</initial_velocity>
     </plugin>
 
     <plugin filename="gz-sim-imu-system" name="gz::sim::systems::Imu">

@@ -139,7 +139,7 @@
     <child link="left_wheel"/>
     <origin xyz="0.11 0.0 -0.2" rpy="0 1.57 0"/>
     <axis xyz="0 0 1"/>
-    <limit effort="5000.0" velocity="10.0"/>
+    <limit effort="5000.0" velocity="500.0"/>
     <dynamics damping="1.0" friction="1.0"/>
   </joint>
 
@@ -149,7 +149,7 @@
     <child link="right_wheel"/>
     <origin xyz="-0.11 0.0 -0.2" rpy="0 1.57 0"/>
     <axis xyz="0 0 1"/>
-    <limit effort="5000.0" velocity="10.0"/>
+    <limit effort="5000.0" velocity="500.0"/>
     <dynamics damping="1.0" friction="1.0"/>
   </joint>
 </robot>
